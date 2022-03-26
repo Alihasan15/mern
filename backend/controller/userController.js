@@ -76,7 +76,7 @@ const registerUser = asyncHandler(async (req,res)=>{
 // @route GET /api/users/me
 // @access Public
 const getMe = asyncHandler(async (req,res)=>{
-    const {id,name,email} = await User.findById(req.user._id)
+    const {id,name,email,token} = await User.findById(req.user._id)
     res.status(200).json({
         _id:id,name,email,token
     })
