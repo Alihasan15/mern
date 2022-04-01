@@ -13,7 +13,7 @@ function Dashboard() {
   const dispatch = useDispatch()
   
 
-  const user = useSelector((state)=>state.auth)
+  const user = useSelector((state)=>state.auth.user)
   const {goals,isLoading, isError,message} = useSelector((state)=>state.goal) 
 
   useEffect(() => {
