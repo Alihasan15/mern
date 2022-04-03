@@ -21,8 +21,9 @@ const setGoal = asyncHandler(async (req,res)=>{
         throw new Error("Please add a text")
     }
     const goal = await Goal.create({
+        user:req.user.id,
         text:goalText,
-        user:req.user.id
+        isCompleted:false
     })
     res.status(200).json(goal)
 })

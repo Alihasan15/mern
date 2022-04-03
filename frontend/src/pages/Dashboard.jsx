@@ -47,7 +47,6 @@ function Dashboard() {
       <GoalForm />
       <section className="content">
          {goals.length>0?goals.map((goal,index)=><GoalItem key={goal._id} goal={goal}>{goal.text}</GoalItem>):<h3>You have not set any goal</h3>}
-      
       </section> 
     </>
   )

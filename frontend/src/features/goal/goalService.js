@@ -26,13 +26,19 @@ const getGoals = async (userToken)=>{
   return response.data
 }
 // Update Goal
-const updateGoal = async (goalId,userToken)=>{
+const updateGoal = async (goalData,userToken)=>{
   const config = {
     headers: {
       "Authorization": "Bearer "+userToken,
     }
   }
-  const response = await axios.put(API_URL+""+goalId,{},config)
+  const goalId = goalData._id;
+  const goalObj = {
+    text:goalData.text,
+    isCompleted:goalData.isCompleted
+  }
+  console.log(goalObj)
+  const response = await axios.put(API_URL+""+goalId,goalObj,config)
 
   return response.data
 }
