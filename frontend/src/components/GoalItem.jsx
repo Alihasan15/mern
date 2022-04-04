@@ -61,9 +61,9 @@ function GoalItem({goal}) {
         <div className='goal-date'>
             {new Date(goal.createdAt).toLocaleString("en-US")}
         </div>
-        <label class="checkbox-container">
+        <label className="checkbox-container">
           <input type="checkbox" checked={goalStatus} onChange={onCheckBoxChange}></input>
-          <span class="checkmark"></span>
+          <span className="checkmark"></span>
         </label>  
         {
           isEdit?
